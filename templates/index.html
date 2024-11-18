@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from photo to Latex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <h1>Online Photo to LaTeX Converter</h1>
+            <h2>Преобразуйте ваше изображение в LaTeX всего за несколько секунд</h2>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2 class="title">Лучшее программное обеспечение для математики и науки</h2>
+        <p class="title_p">конвертер изображений в LaTeX с высокоточными функциями распознавания символов</p>
+
+        <div class="img-description">
+            <div>
+                <h3 class="title-image">Простая математика</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename='img/simple_math.webp') }}"p" width="190" height="85"  class="img-group_img">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title-image">Сложная математика</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename='img/complex_math.webp') }}"bp" width="286" height="76" class="img-group_img">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title-image">Рукописная математика</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename='img/hand_math.webp') }}" width="254" height="80" class="img-group_img">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title-image">Смешанный текст и математика</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename='img/mixed_text_math.webp') }}" width="270" height="100" class="img-group_img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="input-container">
+            <div class="input-file">
+                <label for="fileUpload" class="button">Выберите изображение для конвертации</label>
+                <form method="post" enctype="multipart/form-data">
+                    <input class="button" type=file id="fileUpload" accept="image/*" name="file" style="display: none;"/>
+                </form>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <div class="footer">
+        <p>&copy; 2024 ООО Chikladze team</p>
+        <p>Все права не защищены</p>
+        <p>Support: 8-968-354-55-29 (сбер)</p>
+        <p>Ваша реклама здесь, дорого!</p>
+        <p>По всем вопросам и контрактам звонить менеджеру: +7-968-354-55-29</p>
+        <p>Тех. поддержка: +7-977-832-63-41 (Всегда на связи, если не отвечает, значит играет в бс)</p>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
