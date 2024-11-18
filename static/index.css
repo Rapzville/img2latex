@@ -1,0 +1,188 @@
+.header{
+    text-align: center;
+    background-color: #171b1d;
+    color: white;
+    padding: 20px;
+}
+
+.main {
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .input-file label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+} */
+
+.button input[type="file"] {
+    display: none;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.button::before {
+    /* content: 'Выбрать файл'; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button:hover {
+    background-color: grey;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: white;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+.content {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zagolovok {
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.5; /* Определяет межстрочный интервал */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-primer{
+    max-width: 1700px;
+}
+
+.photo-primer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo-primer img {
+    width: 15%; /* Ширина каждого изображения */
+    height: auto;
+    margin-right: 2%; /* Отступ справа между изображениями */
+}
+
+.photo-primer img:last-child {
+    margin-right: 0; /* Последний элемент без правого отступа */
+}
+
+.spisok {
+    list-style-type: none;
+    padding-left: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.spisok li {
+    font-weight: bold;
+    text-align: center;
+    width: 25%;
+    margin-bottom: -25px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .photo-primer img {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+
+    .spisok {
+        flex-wrap: wrap;
+    }
+
+    .spisok li {
+        width: 49%;
+        margin-bottom: 10px;
+    }
+}
+
+
+.description {
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.5; /* Определяет межстрочный интервал */
+}
+
+.img-description {
+    display: flex;
+    gap: 200px; /* Промежуток между элементами */
+    padding: 0 70px; /* Внешний отступ справа и слева */
+}
+
+.title-image {
+    margin-bottom: 10px; /* Отступ между заголовком и изображением */
+}
+
+.title_p {
+    text-align: center;
+    margin-bottom: 40px; /* Отступ между параграфом и картинками */
+}
+
+.img-group_img {
+    max-width: 100%;
+    height: auto;
+}

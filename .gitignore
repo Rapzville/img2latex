@@ -162,7 +162,5 @@ cython_debug/
 #.idea/
 
 ocr-data/
-static/
 uploaded/
 model.onnx
-templates/
