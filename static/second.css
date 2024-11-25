@@ -1,0 +1,96 @@
+.header{
+    text-align: center;
+    background-color: #171b1d;
+    color: white;
+    padding: 20px;
+}
+
+
+.title-image {
+    margin-bottom: 10px; /* Отступ между заголовком и изображением */
+}
+
+.title_p {
+    text-align: center;
+    margin-bottom: 40px; /* Отступ между параграфом и картинками */
+}
+
+.img-group_img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-box {
+    width: 100%;
+    border: 1px solid #000; /* Черный контур вокруг блока */
+    padding: 15px;          /* Внутренний отступ */
+    font-size: 16px;        /* Размер шрифта */
+    text-align: center;     /* Центрирование текста */
+    background-color: #f9f9fa; /* Светло-серый фон */
+}
+
+body {
+    margin: 0; /* Убираем стандартные отступы браузера */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; /* Отступы сверху и снизу */
+    max-width: 1400px; /* Ограничиваем максимальную ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}
+
+.main-menu > div {
+    flex: 1 1 calc(33% - 40px); /* Доля ширины, которая займет каждый блок */
+    margin-right: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h3.title-image {
+    margin-bottom: 10px;
+}
+
+.main-menu > div:last-child {
+    margin-right: 0; /* Убираем отступ справа у последнего блока */
+}
+
+.footer {
+    margin-top: auto;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+

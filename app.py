@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from model import predict
 
 
-UPLOAD_FOLDER = '/uploaded/'
+UPLOAD_FOLDER = 'static/uploaded/'
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
 
@@ -32,10 +32,13 @@ def home():
             return redirect(request.url)
         
         if file and allowed_file(file.filename):
+            
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                os.mkdir(app.config['UPLOAD_FOLDER'])
 
             filename = secure_filename(file.filename)
             
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)[1:])
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             
             return redirect(url_for('uploaded', filename=filename))
     
@@ -44,8 +47,12 @@ def home():
 @app.route('/uploaded/<filename>')
 def uploaded(filename):
     res = predict(f'uploaded/{filename}')
-    os.remove(f'uploaded/{filename}')
-    return f'{res}'
+    # if os.path.exists(f'uploaded/{filename}'):
+    #     os.remove(f'uploaded/{filename}')
+    context = {}
+    context['filename'] = "uploaded/" + filename
+    context['res'] = res
+    return render_template("second.html", context=context)
 
 if __name__ == '__main__':
     app.config['SECRET_KEY'] = 'secret'

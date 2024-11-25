@@ -6,5 +6,4 @@ def predict(img_path):
     img = Image.open(img_path)
         
     res = model(img)
-
     return res

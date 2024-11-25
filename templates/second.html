@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from photo to Latex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='second.css') }}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <h1>Online Photo to LaTeX Converter</h1>
+            <h2>Преобразуйте ваше изображение в LaTeX всего за несколько секунд</h2>
+        </div>
+    </div>
+
+        <div class="main-menu">
+            <div>
+                <h3 class="title-image">Исходная картинка</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename=context.filename) }}"  class="img-group_img">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title-image">Результат</h3>
+                <div class="text-box">
+                    {{ context.res }}
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title-image">Рендер</h3>
+                <div class="imgstack">
+                    <img src="{{ url_for('static', filename=context.filename) }}" class="img-group_img">
+                </div>
+            </div>
+        </div>        
+ 
+
+
+
+
+
+
+
+    <div class="footer">
+        <p>&copy; 2024 ООО Chikladze team</p>
+        <p>Все права не защищены</p>
+        <p>Support: 8-968-354-55-29 (сбер)</p>
+        <p>Ваша реклама здесь, дорого!</p>
+        <p>По всем вопросам и контрактам звонить менеджеру: +7-968-354-55-29</p>
+        <p>Тех. поддержка: +7-977-832-63-41 (Всегда на связи, если не отвечает, значит играет в бс)</p>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
