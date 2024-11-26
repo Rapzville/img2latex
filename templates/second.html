@@ -32,18 +32,11 @@
 
             <div>
                 <h3 class="title-image">Рендер</h3>
-                <div class="imgstack">
-                    <img src="{{ url_for('static', filename=context.filename) }}" class="img-group_img">
+                <div class="text-box">
+                    $$ {{ context.res }} $$
                 </div>
             </div>
-        </div>        
- 
-
-
-
-
-
-
+        </div>          
 
     <div class="footer">
         <p>&copy; 2024 ООО Chikladze team</p>
@@ -54,8 +47,6 @@
         <p>Тех. поддержка: +7-977-832-63-41 (Всегда на связи, если не отвечает, значит играет в бс)</p>
     </div>
 
-
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </body>
 </html>

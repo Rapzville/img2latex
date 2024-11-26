@@ -46,9 +46,7 @@ def home():
 
 @app.route('/uploaded/<filename>')
 def uploaded(filename):
-    res = predict(f'uploaded/{filename}')
-    # if os.path.exists(f'uploaded/{filename}'):
-    #     os.remove(f'uploaded/{filename}')
+    res = predict(f'static/uploaded/{filename}')
     context = {}
     context['filename'] = "uploaded/" + filename
     context['res'] = res
