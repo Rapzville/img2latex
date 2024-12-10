@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    justify-content: center; /* Горизонтально центрируем кнопку */
+    align-items: flex-start; /* Фиксируем позицию кнопки к верхнему краю */
+    min-height: 100vh; /* Занимаем всю высоту окна браузера */
+    margin: 0; /* Сбрасываем внешние отступы */
+}
+
+button {
+    width: 100%; /* делаем кнопку на всю ширину страницы */
+    display: flex;
+    justify-content: center; /* центрируем блок внутри кнопки */
+    margin-top: 15px;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 1000px;
+    height: 50px;
+}
+
+
+.text,
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* высота равна высоте родителя */
+}
+
+

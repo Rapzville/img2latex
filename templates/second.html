@@ -15,6 +15,19 @@
         </div>
     </div>
 
+
+    {% for name in context.history %}
+    <div class="history-button">
+        <a class="history" href="{{ url_for('uploaded', filename=name) }}">
+            <div class="block">
+                <div class="picture">
+                    <img src="{{ url_for('static', filename='uploaded/'+name) }}"  height="75%" alt="">
+                </div>
+                <div class="text">{{name}}</div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
         <div class="main-menu">
             <div>
                 <h3 class="title-image">Исходная картинка</h3>
@@ -25,15 +38,21 @@
 
             <div>
                 <h3 class="title-image">Результат</h3>
-                <div class="text-box">
-                    {{ context.res }}
-                </div>
+                    <textarea class="text-box" id="result" oninput="addFormula()">{{context.res}}</textarea>
+                    <div class="button">
+                        <p>Результат неверен?</p>
+                        <p>Исправьте ошибку и нажмите кнопку отправить</p>
+                        <p>Кто тыкнет просто так-даун, мы следим за вами</p>
+                        <button>Отправить</button>
+                    </div>
             </div>
-
+    
             <div>
                 <h3 class="title-image">Рендер</h3>
-                <div class="text-box">
-                    $$ {{ context.res }} $$
+                <div class="text-box" id="render">
+
+                    $$ {{context.res}} $$
+
                 </div>
             </div>
         </div>          
@@ -42,11 +61,20 @@
         <p>&copy; 2024 ООО Chikladze team</p>
         <p>Все права не защищены</p>
         <p>Support: 8-968-354-55-29 (сбер)</p>
-        <p>Ваша реклама здесь, дорого!</p>
+        <p>Ваша реклама будет здесь, но дорого!</p>
         <p>По всем вопросам и контрактам звонить менеджеру: +7-968-354-55-29</p>
         <p>Тех. поддержка: +7-977-832-63-41 (Всегда на связи, если не отвечает, значит играет в бс)</p>
     </div>
 
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script type="text/javascript" async src="{{ url_for('static', filename='second.js') }}"></script>
+    <script>
+        function addFormula() {
+            document.getElementById('render').innerHTML = '$$ '+ document.getElementById('result').value + ' $$';
+            MathJax.typesetPromise()
+                .then(() => console.log("Formula rendered!"))
+                .catch((err) => console.error("MathJax error:", err));
+        }
+    </script>
 </body>
 </html>

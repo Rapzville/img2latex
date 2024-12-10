@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, redirect, request, flash
+from flask import Flask, render_template, url_for, redirect, request, flash, make_response
 from werkzeug.utils import secure_filename
 from model import predict
 
@@ -50,7 +50,23 @@ def uploaded(filename):
     context = {}
     context['filename'] = "uploaded/" + filename
     context['res'] = res
-    return render_template("second.html", context=context)
+    if request.cookies.get('history'):
+        context['history'] = request.cookies.get('history').split()
+    else:
+        context['history'] = []
+    page = make_response(render_template("second.html", context=context))
+    if not request.cookies.get('history'):
+        page.set_cookie('history', filename, max_age=60*60*24*7)
+    else:
+        if len(context['history']) > 2:
+            a, b = context['history'][:2]
+            
+            page.set_cookie('history', a + ' ' + b +' '+filename, max_age=60*60*24*7)
+        else:
+            a = context['history'][0]
+            page.set_cookie('history', a + ' ' +filename, max_age=60*60*24*7)
+
+    return page 
 
 if __name__ == '__main__':
     app.config['SECRET_KEY'] = 'secret'
